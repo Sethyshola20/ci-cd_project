@@ -30,8 +30,10 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Run unit tests
-        run: npm test -- --coverage
+       - name: Run Cypress tests
+        run: |
+          npm install cypress
+          npx cypress run
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v2
